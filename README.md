@@ -1,2 +1,2 @@
 # ARES
-Code respository for ARES Moon to Mars Ice Prospecting Challenge
+Code respository for NASA's Moon to Mars Ice Prospecting Challenge
