@@ -64,16 +64,16 @@ void loop() {
   /* Updates frequently */
     //Load Cell averaging and pecking operation
     if(readLiDAR == true){ // timer1 ISR toggles this flag at an interval of 250 ms
-        read_dual_sensors(); //ISR has been triggered, meaning it is time to read the LiDAR sensors
-        readLiDAR = false; //after new data is acquired, set value to false to stop reading from LiDAR
+        read_dual_sensors(); //ISR has been triggered, meaning it is time to read the LiDAR sensors. Found in LIDARS.h
+        readLiDAR = false; //after new data is acquired, set value to false to stop reading from LiDAR found in LIDARS.h
         //will wait until ISR triggers reading of LiDAR again
       }
-    wobAveAndPecking();
+    wobAveAndPecking(); // found in loadcell.h
     //Limit Switch Dependancies
     //LimSwCntrl();
     //Look for remote commands, packet management, remote control
-    recvWithStartEndMarkers();
-    showNewData();
-    updateTimerTopCounts();
-    sendSensorDataPacket(); // sends <wobData, motorSpeed,LiDAR 1> to LabVIEW  
+    recvWithStartEndMarkers(); //found in packetManager.h
+    showNewData(); //found in packetManager.h
+    updateTimerTopCounts(); //found under Actuation.h
+    sendSensorDataPacket(); // sends <wobData, motorSpeed,LiDAR 1> to LabVIEW. Found in packetManager.h
   }
